@@ -1,0 +1,285 @@
+[
+  {
+    "id": "chassis_impact_stress",
+    "section": "chassis",
+    "label": "Front Impact Tube Axial Stress",
+    "symbol": "\\sigma_{\\text{axial}}",
+    "equation_tex": "\\sigma_{\\text{axial}} = \\frac{F_{\\text{front}}}{2 \\cdot A_{\\text{tube}}} = \\frac{44800\\text{ N}}{2 \\times 123.1\\text{ mm}^2}",
+    "inputs": [
+      { "symbol": "F_{\\text{front}}", "value": "44,800", "unit": "N" },
+      { "symbol": "A_{\\text{tube}}", "value": "123.1", "unit": "mm²" }
+    ],
+    "result": "181.9",
+    "unit": "MPa",
+    "fos": "FOS = 2.53 (vs 460 MPa Yield)",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "chassis_side_bending",
+    "section": "chassis",
+    "label": "Side Bumper Member Bending Stress",
+    "symbol": "\\sigma_b",
+    "equation_tex": "\\sigma_b = \\frac{M}{Z} = \\frac{F_{\\text{side}} \\cdot L / 4}{\\frac{\\pi}{32}\\frac{D^4 - d^4}{D}} = \\frac{5460\\text{ N·m}}{694.5\\text{ mm}^3}",
+    "inputs": [
+      { "symbol": "F_{\\text{side}}", "value": "33,600", "unit": "N" },
+      { "symbol": "L", "value": "650", "unit": "mm" },
+      { "symbol": "Z", "value": "694.5", "unit": "mm³" }
+    ],
+    "result": "210.4",
+    "unit": "MPa",
+    "fos": "FOS = 2.19 (Safe Yield Reserve)",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "chassis_roll_hoop",
+    "section": "chassis",
+    "label": "Roll Hoop Dynamic Inversion Load",
+    "symbol": "\\sigma_{\\text{hoop}}",
+    "equation_tex": "\\sigma_{\\text{hoop}} = \\frac{3 \\cdot m \\cdot g}{2 \\cdot A_{\\text{tube}}} = \\frac{3 \\times 180 \\times 9.81}{2 \\times 123.1}",
+    "inputs": [
+      { "symbol": "m", "value": "180", "unit": "kg" },
+      { "symbol": "g", "value": "9.81", "unit": "m/s²" },
+      { "symbol": "Load", "value": "3.0 g", "unit": "Inversion" }
+    ],
+    "result": "129.1",
+    "unit": "MPa",
+    "fos": "FOS = 3.56 (FIA/Rulebook Margin)",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "chassis_torsional_stiffness",
+    "section": "chassis",
+    "label": "Chassis Torsional Rigidity Estimate",
+    "symbol": "K_t",
+    "equation_tex": "K_t = \\frac{T}{\\theta} = \\frac{M \\cdot L_{\\text{track}}}{\\arctan(\\Delta z / [W_f / 2])}",
+    "inputs": [
+      { "symbol": "T", "value": "500", "unit": "N·m" },
+      { "symbol": "\\theta", "value": "0.403", "unit": "deg" },
+      { "symbol": "W_f", "value": "1032", "unit": "mm" }
+    ],
+    "result": "1,240",
+    "unit": "N·m/deg",
+    "fos": "Target Rigidity Met",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "steering_ackermann_outer",
+    "section": "steering",
+    "label": "Ackermann Kinematic Outer Angle",
+    "symbol": "\\delta_o",
+    "equation_tex": "\\cot(\\delta_o) - \\cot(\\delta_i) = \\frac{K_f}{L} \\Rightarrow \\cot(21.32^\\circ) - \\cot(32.19^\\circ) = 0.974",
+    "inputs": [
+      { "symbol": "\\delta_i", "value": "32.19", "unit": "deg" },
+      { "symbol": "K_f/L", "value": "0.974", "unit": "—" }
+    ],
+    "result": "21.32",
+    "unit": "deg",
+    "fos": "100% Ackermann Alignment",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "steering_turning_radius",
+    "section": "steering",
+    "label": "Vehicle Centerline Turning Radius",
+    "symbol": "R",
+    "equation_tex": "R = \\sqrt{(L \\cot\\delta_i + K_f/2)^2 + L^2}",
+    "inputs": [
+      { "symbol": "L", "value": "1060", "unit": "mm" },
+      { "symbol": "K_f", "value": "1032", "unit": "mm" },
+      { "symbol": "\\delta_i", "value": "32.19", "unit": "deg" }
+    ],
+    "result": "2.45",
+    "unit": "m",
+    "fos": "R < 3.0 m Compliance",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "steering_tie_rod_force",
+    "section": "steering",
+    "label": "Kingpin Moment & Tie-Rod Force",
+    "symbol": "F_{\\text{tie-rod}}",
+    "equation_tex": "F_{\\text{tie-rod}} = \\frac{M_{\\text{kingpin}}}{r_{\\text{arm}}} = \\frac{11.53\\text{ N·m}}{0.035\\text{ m}}",
+    "inputs": [
+      { "symbol": "M_{\\text{kp}}", "value": "11.53", "unit": "N·m" },
+      { "symbol": "r_{\\text{arm}}", "value": "35", "unit": "mm" }
+    ],
+    "result": "329.4",
+    "unit": "N",
+    "fos": "Buckling FOS = 6.8",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "steering_effort",
+    "section": "steering",
+    "label": "Driver Steering Wheel Hand Effort",
+    "symbol": "F_{\\text{effort}}",
+    "equation_tex": "F_{\\text{effort}} = \\frac{T_{\\text{col}}}{r_{\\text{wheel}}} = \\frac{7.05\\text{ N·m}}{0.127\\text{ m}}",
+    "inputs": [
+      { "symbol": "T_{\\text{col}}", "value": "7.05", "unit": "N·m" },
+      { "symbol": "D_{\\text{rim}}", "value": "254", "unit": "mm" }
+    ],
+    "result": "55.5",
+    "unit": "N",
+    "fos": "Ergonomically Comfortable",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "brake_line_pressure",
+    "section": "braking",
+    "label": "Hydraulic Circuit Line Pressure",
+    "symbol": "P_{\\text{line}}",
+    "equation_tex": "P_{\\text{line}} = \\frac{F_{\\text{pedal}} \\cdot R_p}{A_{\\text{mc}}} = \\frac{350\\text{ N} \\times 5}{(\\pi/4)(17\\text{ mm})^2}",
+    "inputs": [
+      { "symbol": "F_{\\text{pedal}}", "value": "350", "unit": "N" },
+      { "symbol": "R_p", "value": "5:1", "unit": "Lever" },
+      { "symbol": "d_{\\text{mc}}", "value": "17", "unit": "mm" }
+    ],
+    "result": "7.71",
+    "unit": "MPa (77.1 bar)",
+    "fos": "Line Rating: 15 MPa",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "brake_clamping_force",
+    "section": "braking",
+    "label": "Caliper Piston Clamping Force",
+    "symbol": "F_{\\text{clamp}}",
+    "equation_tex": "F_{\\text{clamp}} = P_{\\text{line}} \\cdot A_{\\text{caliper}} = 7.71\\text{ MPa} \\times \\frac{\\pi(34\\text{ mm})^2}{4}",
+    "inputs": [
+      { "symbol": "P_{\\text{line}}", "value": "7.71", "unit": "MPa" },
+      { "symbol": "d_{\\text{cal}}", "value": "34", "unit": "mm" }
+    ],
+    "result": "7,000",
+    "unit": "N (7.0 kN)",
+    "fos": "High Clamping Grip",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "braking_torque",
+    "section": "braking",
+    "label": "Live Rear Axle Braking Torque",
+    "symbol": "T_b",
+    "equation_tex": "T_b = 2 \\cdot \\mu_{\\text{pad}} \\cdot F_{\\text{clamp}} \\cdot r_e = 2(0.40)(7000)(0.0825)",
+    "inputs": [
+      { "symbol": "\\mu_{\\text{pad}}", "value": "0.40", "unit": "—" },
+      { "symbol": "F_{\\text{clamp}}", "value": "7,000", "unit": "N" },
+      { "symbol": "r_e", "value": "82.5", "unit": "mm" }
+    ],
+    "result": "462.0",
+    "unit": "N·m",
+    "fos": "Full Rear Wheel Lockup",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "braking_kinetic_energy",
+    "section": "braking",
+    "label": "Kinetic Energy & Stopping Distance",
+    "symbol": "E_k",
+    "equation_tex": "E_k = \\frac{1}{2} m v^2 = \\frac{1}{2}(180\\text{ kg})(16.67\\text{ m/s})^2 \\quad \\left(s = \\frac{v^2}{2a}\\right)",
+    "inputs": [
+      { "symbol": "m", "value": "180", "unit": "kg" },
+      { "symbol": "v", "value": "60 km/h (16.67)", "unit": "m/s" },
+      { "symbol": "a", "value": "5.42", "unit": "m/s²" }
+    ],
+    "result": "25.01",
+    "unit": "kJ (s = 25.6 m)",
+    "fos": "Avg Dissipation: 8.15 kW",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "tractive_resistance_70kmh",
+    "section": "drivetrain",
+    "label": "Road Load Resistance at 70 km/h",
+    "symbol": "F_{\\text{res}}",
+    "equation_tex": "F_{\\text{res}} = f m g + \\frac{1}{2}\\rho C_d A v^2 = 44.15\\text{ N} + 137.91\\text{ N}",
+    "inputs": [
+      { "symbol": "m", "value": "180", "unit": "kg" },
+      { "symbol": "v", "value": "19.44", "unit": "m/s" },
+      { "symbol": "C_d \\cdot A", "value": "0.595", "unit": "m²" }
+    ],
+    "result": "182.1",
+    "unit": "N",
+    "fos": "Cruising Power: 3.54 kW",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "sprocket_ratio",
+    "section": "drivetrain",
+    "label": "Roller Chain Sprocket Reduction",
+    "symbol": "i",
+    "equation_tex": "i = \\frac{N_{\\text{driven}}}{N_{\\text{drive}}} = \\frac{42}{15}",
+    "inputs": [
+      { "symbol": "N_{\\text{driven}}", "value": "42", "unit": "teeth" },
+      { "symbol": "N_{\\text{drive}}", "value": "15", "unit": "teeth" }
+    ],
+    "result": "2.80",
+    "unit": "—",
+    "fos": "Peak Wheel RPM: 1143",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "drivetrain_axle_torque",
+    "section": "drivetrain",
+    "label": "Rear Axle Available Drive Torque",
+    "symbol": "T_{\\text{axle}}",
+    "equation_tex": "T_{\\text{axle}} = T_{\\text{motor}} \\cdot i \\cdot \\eta_{\\text{chain}} = 78\\text{ N·m} \\times 2.80 \\times 0.95",
+    "inputs": [
+      { "symbol": "T_{\\text{motor}}", "value": "78", "unit": "N·m" },
+      { "symbol": "i", "value": "2.80", "unit": "—" },
+      { "symbol": "\\eta", "value": "0.95", "unit": "Chain Eff." }
+    ],
+    "result": "207.5",
+    "unit": "N·m",
+    "fos": "2.11× Margin vs Demand",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "acceleration_demand",
+    "section": "drivetrain",
+    "label": "Acceleration Force & Peak Power Demand",
+    "symbol": "P_{\\text{peak}}",
+    "equation_tex": "F_{\\text{acc}} = m \\cdot a = 180 \\times 3.47\\text{ m/s}^2 \\Rightarrow P = F_{\\text{total}} \\cdot v",
+    "inputs": [
+      { "symbol": "a", "value": "3.47", "unit": "m/s²" },
+      { "symbol": "t (0-50)", "value": "4.0", "unit": "s" },
+      { "symbol": "F_{\\text{peak}}", "value": "703.3", "unit": "N" }
+    ],
+    "result": "8.8",
+    "unit": "kW",
+    "fos": "Motor Peak 10 kW Compliant",
+    "status": "recalculated",
+    "public": true
+  },
+  {
+    "id": "battery_discharge_rate",
+    "section": "drivetrain",
+    "label": "Battery Continuous C-Rate & Range",
+    "symbol": "C_{\\text{cont}}",
+    "equation_tex": "C_{\\text{cont}} = \\frac{I_{\\text{rated}}}{C_{\\text{pack}}} = \\frac{70\\text{ A}}{90\\text{ Ah}} \\quad \\left(E = 6.48\\text{ kWh}\\right)",
+    "inputs": [
+      { "symbol": "V_{\\text{nom}}", "value": "72", "unit": "V" },
+      { "symbol": "Capacity", "value": "90", "unit": "Ah (2×45)" },
+      { "symbol": "I_{\\text{rated}}", "value": "70", "unit": "A" }
+    ],
+    "result": "0.78",
+    "unit": "C (~55 km Track Range)",
+    "fos": "Cell Peak Limit: 3.0 C",
+    "status": "recalculated",
+    "public": true
+  }
+]

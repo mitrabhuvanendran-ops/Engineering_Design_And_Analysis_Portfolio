@@ -1,0 +1,52 @@
+[
+  {
+    "id": "wireframe-chassis",
+    "source": "figures\\chassis.webp",
+    "file": "figures\\wireframe-chassis.webp",
+    "alt": "Line-art CAD diagram of the tubular go-kart chassis.",
+    "width": 452,
+    "height": 394
+  },
+  {
+    "id": "wireframe-steering",
+    "source": "figures\\steering.webp",
+    "file": "figures\\wireframe-steering.webp",
+    "alt": "Line-art CAD diagram of the steering linkage and front wheels.",
+    "width": 1163,
+    "height": 500
+  },
+  {
+    "id": "wireframe-braking",
+    "source": "figures\\braking.webp",
+    "file": "figures\\wireframe-braking.webp",
+    "alt": "Line-art CAD diagram of the brake disc and caliper assembly.",
+    "width": 290,
+    "height": 463
+  },
+  {
+    "id": "wireframe-drivetrain",
+    "source": "figures\\drivetrain.webp",
+    "file": "figures\\wireframe-drivetrain.webp",
+    "alt": "Line-art CAD diagram of the motor, chain and rear axle assembly.",
+    "width": 932,
+    "height": 563
+  },
+  {
+    "id": "ergonomics-side",
+    "source": "private\\sources\\posture-ergonomics\\driver-side.png",
+    "file": "figures\\catia-posture-side.webp",
+    "alt": "CATIA side view of a seated driver checking seat support, pedal reach and steering reach.",
+    "treatment": "source",
+    "width": 793,
+    "height": 495
+  },
+  {
+    "id": "ergonomics-front",
+    "source": "private\\sources\\posture-ergonomics\\driver-front.png",
+    "file": "figures\\catia-posture-front.webp",
+    "alt": "CATIA front view of a seated driver checking centered posture and cockpit clearance.",
+    "treatment": "source",
+    "width": 759,
+    "height": 485
+  }
+]

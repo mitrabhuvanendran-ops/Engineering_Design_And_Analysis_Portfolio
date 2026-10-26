@@ -1,0 +1,210 @@
+[
+  {
+    "id": "sim-chassis-impact",
+    "name": "Chassis impact",
+    "analysis": "Static structural \u00b7 impact",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p4_img1.png",
+    "crop": [
+      0.18,
+      0.16,
+      0.86,
+      0.84
+    ],
+    "file": "figures\\sim-chassis-impact.webp",
+    "alt": "Cropped finite-element contour view of the chassis impact case.",
+    "width": 319,
+    "height": 152
+  },
+  {
+    "id": "sim-chassis-impact-rear",
+    "name": "Rear impact case",
+    "analysis": "Static structural \u00b7 impact",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p4_img2.png",
+    "crop": [
+      0.18,
+      0.16,
+      0.86,
+      0.84
+    ],
+    "file": "figures\\sim-chassis-impact-rear.webp",
+    "alt": "Cropped finite-element contour view of the rear chassis impact case.",
+    "width": 313,
+    "height": 148
+  },
+  {
+    "id": "sim-chassis-impact-side",
+    "name": "Side impact case",
+    "analysis": "Static structural \u00b7 impact",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p4_img3.png",
+    "crop": [
+      0.18,
+      0.16,
+      0.86,
+      0.84
+    ],
+    "file": "figures\\sim-chassis-impact-side.webp",
+    "alt": "Cropped finite-element contour view of the side chassis impact case.",
+    "width": 315,
+    "height": 147
+  },
+  {
+    "id": "sim-chassis-torsion",
+    "name": "Chassis torsion",
+    "analysis": "Static structural \u00b7 torsion",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p6_img1.png",
+    "crop": [
+      0.18,
+      0.12,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-chassis-torsion.webp",
+    "alt": "Cropped finite-element contour view of the chassis torsion case.",
+    "width": 695,
+    "height": 368
+  },
+  {
+    "id": "sim-brake-disc",
+    "name": "Brake disc",
+    "analysis": "Thermal analysis",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p8_img1.png",
+    "crop": [
+      0.25,
+      0.04,
+      0.77,
+      0.68
+    ],
+    "file": "figures\\sim-brake-disc.webp",
+    "alt": "Cropped thermal contour image of a brake disc.",
+    "width": 501,
+    "height": 328
+  },
+  {
+    "id": "sim-rear-axle",
+    "name": "Rear axle / shaft",
+    "analysis": "Static structural \u00b7 fatigue",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p9_img1.png",
+    "crop": [
+      0.12,
+      0.17,
+      0.88,
+      0.84
+    ],
+    "file": "figures\\sim-rear-axle.webp",
+    "alt": "Cropped finite-element contour view of the rear axle shaft.",
+    "width": 336,
+    "height": 149
+  },
+  {
+    "id": "sim-motor-mount",
+    "name": "Motor mount",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p11_img1.png",
+    "crop": [
+      0.18,
+      0.14,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-motor-mount.webp",
+    "alt": "Cropped finite-element contour view of the motor mount.",
+    "width": 491,
+    "height": 225
+  },
+  {
+    "id": "sim-motor-back-mount",
+    "name": "Motor back mount",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p13_img1.png",
+    "crop": [
+      0.2,
+      0.15,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-motor-back-mount.webp",
+    "alt": "Cropped finite-element contour view of the motor back mount.",
+    "width": 540,
+    "height": 246
+  },
+  {
+    "id": "sim-shaft-mount",
+    "name": "Shaft mount",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p15_img1.png",
+    "crop": [
+      0.18,
+      0.12,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-shaft-mount.webp",
+    "alt": "Cropped finite-element contour view of the shaft mount.",
+    "width": 585,
+    "height": 267
+  },
+  {
+    "id": "sim-master-cylinder-mount",
+    "name": "Master-cylinder mount",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p17_img1.png",
+    "crop": [
+      0.18,
+      0.12,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-master-cylinder-mount.webp",
+    "alt": "Cropped finite-element contour view of the master-cylinder mount.",
+    "width": 864,
+    "height": 441
+  },
+  {
+    "id": "sim-knuckle",
+    "name": "Knuckle",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p18_img1.png",
+    "crop": [
+      0.18,
+      0.12,
+      0.84,
+      0.86
+    ],
+    "file": "figures\\sim-knuckle.webp",
+    "alt": "Cropped finite-element contour view of the steering knuckle.",
+    "width": 865,
+    "height": 438
+  },
+  {
+    "id": "sim-tripod",
+    "name": "Tripod joint",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p20_img1.png",
+    "crop": [
+      0.2,
+      0.1,
+      0.84,
+      0.88
+    ],
+    "file": "figures\\sim-tripod.webp",
+    "alt": "Cropped finite-element contour view of the tripod joint.",
+    "width": 587,
+    "height": 370
+  },
+  {
+    "id": "sim-stub-arm",
+    "name": "Stub arm",
+    "analysis": "Static structural",
+    "source": "private\\extracted\\images\\doc-20260910-wa0012\\p21_img1.png",
+    "crop": [
+      0.18,
+      0.12,
+      0.85,
+      0.88
+    ],
+    "file": "figures\\sim-stub-arm.webp",
+    "alt": "Cropped finite-element contour view of the stub arm.",
+    "width": 686,
+    "height": 339
+  }
+]

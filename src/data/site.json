@@ -1,0 +1,274 @@
+{
+  "title": "Electric Go-Kart | Mechanical Design & Analysis Portfolio",
+  "hero": {
+    "eyebrow": "Mechanical Engineering Design & CAE Validation",
+    "title": "Electric Go-Kart Engineering Portfolio",
+    "descriptor": "An integrated vehicle engineering portfolio presenting spaceframe chassis design, Ackermann steering kinematics, hydraulic braking, and electric powertrain integration with comprehensive analytical derivations and ANSYS FEA simulation contours.",
+    "imageId": "cad-model-report-template-ezeallracing-p7-img2",
+    "imageAlt": "Complete isometric CAD assembly of the electric go-kart."
+  },
+  "subsystems": [
+    {
+      "id": "chassis",
+      "title": "Chassis & Spaceframe Structure",
+      "subtitle": "Tubular spaceframe architecture, roll hoop, and crashworthiness",
+      "specs": [
+        { "label": "Material", "val": "AISI 4130 Chromoly Steel" },
+        { "label": "Tube OD × Wall", "val": "25.4 mm × 1.65 mm" },
+        { "label": "Yield / UTS", "val": "460 MPa / 560 MPa" },
+        { "label": "Frame Mass", "val": "23 kg (Bare Chassis)" }
+      ],
+      "designTitle": "AISI 4130 Spaceframe Architecture",
+      "design": "Fabricated from AISI 4130 Chromoly steel tubes (OD 25.4 mm, 1.65 mm wall thickness; Yield: 460 MPa, UTS: 560 MPa). The chassis links the occupant cell, side impact protection rails, seat anchor points, and rear powertrain cradle into a continuous triangulated loadpath for maximum torsional rigidity and impact energy absorption.",
+      "approach": "ANSYS 2026 R1 was used to conduct static structural impact analyses (frontal 44.8 kN, lateral 33.6 kN) and torsional stiffness simulations. Direct application of dynamic crash loads in static solvers introduces artificial stress concentrations (26.5 GPa); therefore, nominal member stresses are verified analytically against material yield limits.",
+      "cadVisuals": [
+        {
+          "title": "Spaceframe 3D Solid CAD",
+          "imageId": "cad-model-report-template-ezeallracing-p8-img1",
+          "alt": "Spaceframe 3D Solid Model",
+          "caption": "Tubular member triangulation and driver survival cell layout"
+        },
+        {
+          "title": "Spaceframe Centerline Wireframe",
+          "imageId": "wireframe-chassis",
+          "alt": "Spaceframe Centerline Wireframe",
+          "caption": "CAD centerline wireframe diagram for structural node alignment"
+        },
+        {
+          "title": "4-Point Bucket Seat Mount",
+          "imageId": "cad-model-report-template-ezeallracing-p13-img1",
+          "alt": "Seat Mount CAD Assembly",
+          "caption": "Rigid 4-point driver seat bracket welded to chassis rails"
+        },
+        {
+          "title": "Integrated Vehicle Assembly",
+          "imageId": "cad-model-report-template-ezeallracing-p8-img2",
+          "alt": "Complete Vehicle Assembly",
+          "caption": "Fully integrated 3D assembly with bodywork, cockpit, and live axle"
+        }
+      ],
+      "ergonomics": {
+        "title": "Driver Posture & Cockpit Envelope",
+        "description": "CATIA human-factor envelope verification confirming pedal clearance, steering wheel angle (42° from horizontal), and helmet-to-rollhoop clearance meeting competitive safety regulations.",
+        "views": [
+          {
+            "imageId": "ergonomics-side",
+            "caption": "Lateral Cockpit Clearance & Reach"
+          },
+          {
+            "imageId": "ergonomics-front",
+            "caption": "Frontal Roll Hoop Envelope & Clearance"
+          }
+        ]
+      },
+      "calculationIds": [
+        "chassis_impact_stress",
+        "chassis_side_bending",
+        "chassis_roll_hoop",
+        "chassis_torsional_stiffness"
+      ],
+      "simulations": [
+        {
+          "name": "Chassis Impact Analysis",
+          "analysis": "Static Structural Impact (44.8 kN)",
+          "imageId": "sim-chassis-impact",
+          "caption": "Front impact: crush zone stress distribution and survival cell integrity"
+        },
+        {
+          "name": "Rear Impact Buffer Check",
+          "analysis": "Static Structural Impact (33.6 kN)",
+          "imageId": "sim-chassis-impact-rear",
+          "caption": "Rear bumper deflection profile protecting live axle and motor"
+        },
+        {
+          "name": "Lateral Side Impact Intrusion",
+          "analysis": "Static Structural Impact (33.6 kN)",
+          "imageId": "sim-chassis-impact-side",
+          "caption": "Side rail intrusion mitigation safeguarding lateral battery enclosures"
+        },
+        {
+          "name": "Torsional Stiffness Analysis",
+          "analysis": "Static Structural Torsion (500 N·m Moment)",
+          "imageId": "sim-chassis-torsion",
+          "caption": "Chassis torsional twist contour; nominal stiffness ~1,240 N·m/deg"
+        }
+      ]
+    },
+    {
+      "id": "steering",
+      "title": "Steering System & Kinematics",
+      "subtitle": "Ackermann geometry, stub arm, knuckle, and tie-rod linkage",
+      "specs": [
+        { "label": "Geometry", "val": "100% Ackermann Kinematics" },
+        { "label": "Wheelbase (L)", "val": "1060 mm" },
+        { "label": "Track Width (Kf)", "val": "1032 mm Front" },
+        { "label": "Inner / Outer Angle", "val": "32.19° / 21.32°" }
+      ],
+      "designTitle": "100% Ackermann Steering Linkage",
+      "design": "Designed with a central steering column, pitman arm, adjustable stainless-steel tie rods, and SS304 steering knuckles. The geometry coordinates the front wheels to follow concentric arcs during cornering, eliminating scrub and reducing tire wear.",
+      "approach": "Kinematic equations relate the inner steering angle (32.19°) to the outer steering angle (21.32°) using the wheelbase (1060 mm) and front track width (1032 mm). Static structural FEA was performed on the knuckle (mild steel, Yield: 250 MPa), stub arm (SS304, Yield: 215 MPa), and tripod joint under maximum kingpin moments of 11.53 N·m.",
+      "cadVisuals": [
+        {
+          "title": "Steering Assembly Solid CAD",
+          "imageId": "cad-model-report-template-ezeallracing-p9-img1",
+          "alt": "Steering Assembly Solid CAD",
+          "caption": "Steering wheel, column, pitman arm, tie-rod linkage, and spindles"
+        },
+        {
+          "title": "Steering Kinematic Wireframe",
+          "imageId": "wireframe-steering",
+          "alt": "Steering Kinematic Wireframe",
+          "caption": "Ackermann angle convergence and kingpin inclination line-art"
+        }
+      ],
+      "calculationIds": [
+        "steering_ackermann_outer",
+        "steering_turning_radius",
+        "steering_tie_rod_force",
+        "steering_effort"
+      ],
+      "simulations": [
+        {
+          "name": "Steering Knuckle",
+          "analysis": "Static Structural (11.53 N·m Kingpin Torque)",
+          "imageId": "sim-knuckle",
+          "caption": "Mild steel knuckle under maximum cornering load: 4.94 MPa peak stress"
+        },
+        {
+          "name": "Stub Arm Spindle",
+          "analysis": "Static Structural Spindle Bending",
+          "imageId": "sim-stub-arm",
+          "caption": "SS304 wheel spindle deflection: 0.15 µm, verified safety factor: 1.12"
+        },
+        {
+          "name": "Steering Tripod Joint",
+          "analysis": "Static Structural (7.05 N·m Column Torque)",
+          "imageId": "sim-tripod",
+          "caption": "Torque transmission joint connecting tie rods to column: 0.13 µm deflection"
+        }
+      ]
+    },
+    {
+      "id": "braking",
+      "title": "Hydraulic Braking System",
+      "subtitle": "Master cylinder, caliper hydraulics, and disc thermal dissipation",
+      "specs": [
+        { "label": "Disc Rotor", "val": "200 mm Ventilated SS304" },
+        { "label": "Master Cylinder", "val": "17 mm Bore (5:1 Leverage)" },
+        { "label": "Caliper Piston", "val": "34 mm Floating Single-Piston" },
+        { "label": "Deceleration", "val": "5.42 m/s² (~0.55 g Limit)" }
+      ],
+      "designTitle": "Rear Axle Hydraulic Braking",
+      "design": "Features an adjustable pedal box (5:1 mechanical leverage), a 17 mm bore master cylinder, steel-braided hydraulic lines, and a single-piston floating caliper acting on a ventilated 200 mm diameter stainless-steel rotor mounted to the live rear axle.",
+      "approach": "Hydraulic line pressure, caliper clamping force, disc frictional braking torque, and deceleration were evaluated from an initial velocity of 60 km/h (16.67 m/s). An ANSYS transient thermal analysis (10 s braking cycle, h = 50 W/m²·K) confirmed maximum disc temperatures of 205.7°C, well below the thermal limits of SS304.",
+      "cadVisuals": [
+        {
+          "title": "Caliper & Ventilated Rotor Assembly",
+          "imageId": "cad-model-report-template-ezeallracing-p10-img1",
+          "alt": "Caliper & Rotor Assembly Solid",
+          "caption": "Floating single-piston caliper mounted to live axle disc hub"
+        },
+        {
+          "title": "Dual Pedal Box Assembly",
+          "imageId": "cad-model-report-template-ezeallracing-p12-img1",
+          "alt": "Dual Pedal Box Assembly Solid",
+          "caption": "Ergonomic accelerator and 5:1 ratio brake pedal mechanism"
+        },
+        {
+          "title": "Hydraulic Circuit Wireframe",
+          "imageId": "wireframe-braking",
+          "alt": "Hydraulic Circuit Wireframe",
+          "caption": "Hydraulic line routing, master cylinder mount, and disc schematic"
+        }
+      ],
+      "calculationIds": [
+        "brake_line_pressure",
+        "brake_clamping_force",
+        "braking_torque",
+        "braking_kinetic_energy"
+      ],
+      "simulations": [
+        {
+          "name": "Brake Rotor Transient Thermal",
+          "analysis": "Transient Thermal (10 s continuous braking)",
+          "imageId": "sim-brake-disc",
+          "caption": "Peak temperature: 205.65°C; Max heat flux: 6.84 × 10⁵ W/m²"
+        },
+        {
+          "name": "Master Cylinder Mount",
+          "analysis": "Static Structural (800 N Pushrod Load)",
+          "imageId": "sim-master-cylinder-mount",
+          "caption": "Firewall bracket under emergency driver pedal load: 6.15 MPa stress, FOS: 14.0"
+        }
+      ]
+    },
+    {
+      "id": "drivetrain",
+      "title": "Electric Drivetrain & Live Axle",
+      "subtitle": "PMSM motor, chain reduction, EN24 live axle, and battery system",
+      "specs": [
+        { "label": "Motor Type", "val": "72V 5.0 kW PMSM (78 N·m Peak)" },
+        { "label": "Sprocket Ratio", "val": "15T / 42T (2.80 : 1)" },
+        { "label": "Live Rear Axle", "val": "EN24 Alloy Steel (Yield 635 MPa)" },
+        { "label": "Battery Pack", "val": "72V 90Ah (6.48 kWh NMC Dual)" }
+      ],
+      "designTitle": "5.0 kW PMSM Traction & Live Axle Drive",
+      "design": "Driven by a 72V 5.0 kW PMSM motor (Peak Torque: 78 N·m, 3200 RPM) paired with a FOC controller. Power is transferred via an alloy-steel roller chain reduction (15T drive to 42T driven sprocket, ratio 2.80) to a slotted, stepped EN24 alloy-steel rear live axle.",
+      "approach": "Longitudinal vehicle dynamics were evaluated including aerodynamic drag (Cd = 0.70, A = 0.85 m²), rolling resistance, and acceleration forces (0–50 km/h in 4.0 s). The live axle was modeled in ANSYS under combined motor torque (207.5 N·m) and reverse braking torque (335 N·m) to verify fatigue limits.",
+      "cadVisuals": [
+        {
+          "title": "Motor & Live Axle Drive Assembly",
+          "imageId": "cad-model-report-template-ezeallracing-p11-img1",
+          "alt": "Motor & Live Axle Drive Solid",
+          "caption": "PMSM motor, chain tensioning mount, sprockets, live axle, and pillow blocks"
+        },
+        {
+          "title": "Dual Battery Pack & Hinged Tray",
+          "imageId": "cad-model-report-template-ezeallracing-p14-img1",
+          "alt": "Dual Battery Pack & Hinged Tray Solid",
+          "caption": "Lateral side-pod battery pods with quick-access retention hinge"
+        },
+        {
+          "title": "Powertrain Layout Wireframe",
+          "imageId": "wireframe-drivetrain",
+          "alt": "Powertrain Layout Wireframe",
+          "caption": "Sprocket center-distance alignment and rear live axle schematic"
+        }
+      ],
+      "calculationIds": [
+        "tractive_resistance_70kmh",
+        "sprocket_ratio",
+        "drivetrain_axle_torque",
+        "acceleration_demand",
+        "battery_discharge_rate"
+      ],
+      "simulations": [
+        {
+          "name": "Live Rear Axle Fatigue",
+          "analysis": "Static & Fatigue (EN24 Steel)",
+          "imageId": "sim-rear-axle",
+          "caption": "Combined 207.5 N·m drive torque and 335 N·m brake torque: 16.1 MPa stress, FOS: 5.35"
+        },
+        {
+          "name": "Primary Motor Mount",
+          "analysis": "Static Structural (2.5 kN Chain Reaction)",
+          "imageId": "sim-motor-mount",
+          "caption": "Motor mounting bracket under chain tension reaction: 16.11 MPa stress, FOS: 5.35"
+        },
+        {
+          "name": "Motor Rear Reaction Bracket",
+          "analysis": "Static Structural Review",
+          "imageId": "sim-motor-back-mount",
+          "caption": "Torque reaction support plate: 234.1 MPa stress (reinforcement gussets added)"
+        },
+        {
+          "name": "Live Axle Pillow-Block Mount",
+          "analysis": "Static Structural Bearing Mount",
+          "imageId": "sim-shaft-mount",
+          "caption": "Live axle bearing pillow-block support: 8.88 MPa stress, FOS: 9.71"
+        }
+      ]
+    }
+  ],
+  "footerNote": "Mechanical calculations verified analytically from vehicle parameters. ANSYS FEA results reflect sanitized boundary conditions."
+}

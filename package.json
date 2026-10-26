@@ -1,0 +1,22 @@
+{
+  "name": "design-portfolio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview",
+    "pipeline:prepare": "python scripts/06_prepare_simulations.py && python scripts/07_prepare_wireframes.py && python scripts/04_build_public_data.py",
+    "audit": "python scripts/05_audit.py",
+    "extract": "python scripts/01_extract.py",
+    "clean-figures": "python scripts/02_clean_figures.py",
+    "recalculate": "python scripts/03_recalc.py"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "katex": "^0.19.0"
+  }
+}
